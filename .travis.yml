@@ -21,6 +21,7 @@ before_install:
       AUTO_DEPLOY=true;
     else
       AUTO_DEPLOY=false;
+      AWS_BUCKET="repositoryfinder.stage.datacite.org";
     fi
   - npm config set spin false
   - curl -o- -L https://yarnpkg.com/install.sh | bash
