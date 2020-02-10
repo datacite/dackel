@@ -24,13 +24,13 @@
       <span><em>or</em></span>
     </div>
 
-    <div class="recommended"><button {{action "selectFilter" "agu-fair"}} class="btn-link">See the repositories</button>in re3data that meet the criteria of the Enabling FAIR Data Project.</div>
+    <div class="recommended"><button {{action "selectFilter" "agu-fair"}} class="btn-link">See the repositories</button>in re3data that meet the criteria of the Enabling FAIR Data Project or FAIRsFAIR Project.</div>
   </div>
 {{else}}
   <div class="form-group">
     <div>{{radio-button value="all" groupValue=filter radioClass="radio" changed="selectFilter"}}Search <span class="btn-link">re3data{{#bs-tooltip placement="top" viewportPadding=10}}re3data (https://www.re3data.org) is a global registry of research data repositories.{{/bs-tooltip}}</span> for a repository to upload your data</div>
     <div>{{radio-button value="agu-fair" groupValue=filter radioClass="radio" changed="selectFilter"}}See the repositories in re3data that meet the criteria of the{{#if (eq filter "agu-fair")}}<button {{action "toggle"}} class="btn-link">Enabling FAIR Data Project {{#if collapsed}}{{fa-icon "toggle-off"}}{{else}}{{fa-icon "toggle-on"}}{{/if}}</button>{{else}} Enabling FAIR Data Project{{/if}}</div>
-    <div>{{radio-button value="fairs-fair" groupValue=filter radioClass="radio" changed="selectFilter"}}See the repositories in re3data that meet the criteria of the{{#if (eq filter "fairs-fair")}}<button {{action "toggle"}} class="btn-link">FairsFair Project {{#if collapsed}}{{fa-icon "toggle-off"}}{{else}}{{fa-icon "toggle-on"}}{{/if}}</button>{{else}} FairsFair Project{{/if}}</div>
+    <div>{{radio-button value="fairs-fair" groupValue=filter radioClass="radio" changed="selectFilter"}}See the repositories in re3data that meet the criteria of the{{#if (eq filter "fairs-fair")}}<button {{action "toggle"}} class="btn-link">FAIRsFAIR Project {{#if collapsed}}{{fa-icon "toggle-off"}}{{else}}{{fa-icon "toggle-on"}}{{/if}}</button>{{else}} FAIRsFAIR Project{{/if}}</div>
 
   </div>
 
