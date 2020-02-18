@@ -2,10 +2,10 @@ import Ember from 'ember';
 import { inject as service } from '@ember/service';
 import ENV from 'dackel/config/environment';
 import fetch from 'fetch';
-import RouteMixin from 'ember-cli-pagination/remote/route-mixin';
 import customNotFoundTemplate from '../templates/search-templates/not-found';
+import { assign } from '@ember/polyfills';
 
-export default Ember.Component.extend(RouteMixin, {
+export default Ember.Component.extend({
   router: service(),
   store: service(),
 
@@ -53,12 +53,9 @@ export default Ember.Component.extend(RouteMixin, {
 
   search() {
     this.get('store').unloadAll('re3data');
-    let params = Object.assign(this.get('model').get('otherParams'), { query: this.get('query'), subject: this.get('subject'), open: this.get('open'), pid: this.get('pid'), certified: this.get('certified'), sort: this.get('sort') });
-    params.paramMapping = { page: "page[number]",
-                            perPage: "page[size]",
-                            total_pages: "totalPages" };
+    let params = assign(this.model.get('query'), { query: this.get('query'), subject: this.get('subject'), open: this.get('open'), pid: this.get('pid'), certified: this.get('certified'), sort: this.get('sort') });
 
-    this.get('router').transitionTo('search', { queryParams: params });
+    this.router.transitionTo('search', { queryParams: params });
   },
 
   actions: {
