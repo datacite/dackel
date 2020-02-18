@@ -1,16 +1,19 @@
 import Ember from 'ember';
-import RouteMixin from 'ember-cli-pagination/remote/route-mixin';
+import { assign } from '@ember/polyfills';
 
-export default Ember.Route.extend(RouteMixin, {
+export default Ember.Route.extend({
   perPage: 50,
   collapsed: false,
   
   model(params) {
-    params.paramMapping = { page: "page[number]",
-                            perPage: "page[size]",
-                            total_pages: "totalPages" };
+    params = assign(params, {
+      page: {
+        number: params.page,
+        size: params.size,
+      },
+    });
 
-    return this.findPaged('re3data', params);
+    return this.store.query('re3data', params);
   },
 
   actions: {
