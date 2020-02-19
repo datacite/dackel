@@ -1,24 +1,18 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import { setupFactoryGuy, make } from 'ember-data-factory-guy';
 
-moduleForComponent('model-search', 'Integration | Component | model search', {
-  integration: true
-});
+module('Integration | Component | model-search', function(hooks) {
+  setupRenderingTest(hooks);
+  setupFactoryGuy(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  test('it renders', async function(assert) {
+    this.set('model', make('re3data'));
 
-  this.render(hbs`{{model-search}}`);
+    await render(hbs`<ModelSearch @model={{model}} />`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#model-search}}
-      template block text
-    {{/model-search}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom(this.element).hasText('Search re3data for a repository to upload your data See the repositories in re3data that meet the criteria of the Enabling FAIR Data Project See the repositories in re3data that meet the criteria of the FAIRsFAIR Project The repository provides open access to its data Research data hosted by the repository are accessible without restrictions. The repository uses persistent identifiers Persistent identifiers such as DOIs uniquely identifier datasets, enable the linking to publications, and help with discovery. Search');
+  });
 });

@@ -1,0 +1,2 @@
+2020-02-19T18:26:06.282Z [warn] WARNING: {{eq}} was not converted as it has positional parameters which can't be automatically converted. Source: app/templates/components/model-search.hbs
+2020-02-19T18:26:06.290Z [warn] WARNING: {{pluralize}} was not converted as it has positional parameters which can't be automatically converted. Source: app/templates/components/model-search.hbs
