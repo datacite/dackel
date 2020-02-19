@@ -64,6 +64,7 @@
   "private": true,
   "dependencies": {
     "@sentry/browser": "^5.9.1",
-    "@sentry/integrations": "^5.8.0"
+    "@sentry/integrations": "^5.8.0",
+    "ember-cli-code-coverage": "https://github.com/kategengler/ember-cli-code-coverage"
   }
 }
