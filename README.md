@@ -1,9 +1,6 @@
 # Dackel
 
-[![Build Status](https://travis-ci.org/datacite/dackel.svg?branch=master)](https://travis-ci.org/datacite/dackel)
-
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+[![Build Status](https://travis-ci.org/datacite/dackel.svg?branch=master)](https://travis-ci.org/datacite/dackel) [![Test Coverage](https://api.codeclimate.com/v1/badges/3688e90255a87bc0c129/test_coverage)](https://codeclimate.com/github/datacite/dackel/test_coverage)
 
 ## Prerequisites
 
