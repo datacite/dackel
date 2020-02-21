@@ -24,7 +24,6 @@ package.json.ember-try
 .env
 .env.deploy.*
 
-electron-out/
 package-lock.json
 
 .DS_Store

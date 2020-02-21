@@ -6,7 +6,7 @@
   {{/if}}
 </div>
 
-{{#bs-collapse collapsed=collapsed}}
+<BsCollapse @collapsed={{collapsed}}>
   {{#if model.repositoryUrl}}
     <h5>Repository URL</h5>
     <a href="{{model.repositoryUrl}}">{{fa-icon "external-link"}} {{model.repositoryUrl}}</a>
@@ -85,5 +85,5 @@
   {{/if}}
 
   <br/>
-  {{model-info model=model}}
-{{/bs-collapse}}
+  <ModelInfo @model={{model}} />
+</BsCollapse>

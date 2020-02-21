@@ -1,4 +1,4 @@
-{{application-header type='transparent'}}
+<ApplicationHeader @type="transparent" />
 
 <div class="wrapper">
   <div class="landing-header" style="background-image: url('https://assets.datacite.org/images/fastr/header.png');">
@@ -21,7 +21,7 @@
             <p>As part of the <a href="https://www.fairsfair.eu/">FAIRsFAIR project</a>, which aims to supply practical solutions for the use of the 
             FAIR data principles throughout the research data life cycle, the Repository Finder is extended to query for repositories relevant to FAIRsFAIR Project.</p>
 
-          {{model-search model=model splash=true}}
+          <ModelSearch @model={{model}} @splash={{true}} />
         </div>
       </div>
     </div>

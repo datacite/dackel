@@ -1,14 +1,14 @@
-{{application-header}}
+<ApplicationHeader />
 
 <div class="container-fluid">
   <div class='col-md-8 col-sm-offset-2 repository-finder'>
-    {{model-search model=model sortable=true}}
+    <ModelSearch @model={{model}} @sortable={{true}} />
 
 
     {{#if (gt model.meta.total 0)}}
       {{#each model as |repository|}}
         <h3 class="repository">
-          {{model-icons model=repository}}
+          <ModelIcons @model={{repository}} />
 
           {{repository.repositoryName}}{{#if repository.additionalName}}<div class="subtitle">{{repository.additionalName.text}}</div>{{/if}}
         </h3>
@@ -20,27 +20,27 @@
         {{#if repository.tags}}
           <div class="subject">
             {{#each repository.tags as |tag|}}
-              {{subject-label tag=tag}}
+              <SubjectLabel @tag={{tag}} />
             {{/each}}
           </div>
         {{/if}}
 
-        {{repository-info model=repository}}
+        <RepositoryInfo @model={{repository}} />
       {{/each}}
 
       {{#if (eq model.meta.page model.meta.total_pages)}}
-        {{repository-message type="info"}}
+        <RepositoryMessage @type="info" />
       {{/if}}
 
       {{#if model}}
         <div class="text-center">
           {{#if (gt model.meta.total_pages 1)}}
-            {{page-numbers content=model numPagesToShow=5 showFL=false}}
+            <PageNumbers @content={{model}} @numPagesToShow={{5}} @showFL={{false}} />
           {{/if}}
         </div>
       {{/if}}
     {{else}}
-      {{repository-message type="warning"}}
+      <RepositoryMessage @type="warning" />
     {{/if}}
   </div>
 
