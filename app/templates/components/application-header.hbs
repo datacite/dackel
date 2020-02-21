@@ -1,14 +1,14 @@
-{{#bs-navbar type=type fluid=true collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
+<BsNavbar @type={{type}} @fluid={{true}} @collapsed={{collapsed}} @onCollapse={{action (mut collapsed) true}} @onExpand={{action (mut collapsed) false}} as |navbar|>
   <div class="navbar-header">
     {{navbar.toggle}}
     <a href="/" class="navbar-brand">{{title}}</a>
   </div>
-  {{#navbar.content}}
-    {{#navbar.nav class="navbar-right" as |nav|}}
-      {{#nav.item}}{{#link-to 'about'}}About{{/link-to}}{{/nav.item}}
-      {{#nav.item}}{{#link-to 'search'}}Search{{/link-to}}{{/nav.item}}
-      {{#nav.item}}{{#link-to 'faq'}}FAQ{{/link-to}}{{/nav.item}}
+  <navbar.content>
+    <navbar.nav @class="navbar-right" as |nav|>
+      <nav.item><LinkTo @route="about">About</LinkTo></nav.item>
+      <nav.item><LinkTo @route="search">Search</LinkTo></nav.item>
+      <nav.item><LinkTo @route="faq">FAQ</LinkTo></nav.item>
       <li><a target="_blank" href="https://support.datacite.org">Support</a></li>
-    {{/navbar.nav}}
-  {{/navbar.content}}
-{{/bs-navbar}}
+    </navbar.nav>
+  </navbar.content>
+</BsNavbar>
