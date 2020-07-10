@@ -41,8 +41,8 @@ module.exports = function(environment) {
 
     SITE_TITLE: process.env.SITE_TITLE || "Repository Finder",
     NAVMENU_TITLE: process.env.NAVMENU_TITLE,
-    API_URL: process.env.API_URL || "https://api.test.datacite.org",
-    CDN_URL: process.env.CDN_URL || "https://assets.test.datacite.org",
+    API_URL: process.env.API_URL || "https://api.stage.datacite.org",
+    CDN_URL: process.env.CDN_URL || "https://assets.stage.datacite.org",
     SUBJECT_FILTER: "34",
     SENTRY_DSN: process.env.SENTRY_DSN || null,
     VERSION: pkg.version,
