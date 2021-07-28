@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/datacite/dackel.svg?branch=master)](https://travis-ci.org/datacite/dackel) [![Test Coverage](https://api.codeclimate.com/v1/badges/3688e90255a87bc0c129/test_coverage)](https://codeclimate.com/github/datacite/dackel/test_coverage)
 
+Repository Finder
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
